@@ -4,7 +4,9 @@ const container = document.createElement('div');
 container.classList.add('container');
 body.appendChild(container);
 
-// Helper function to load scripts
+
+
+// Function to load scripts
 
 const loadJS = (url) => {
     let script = document.createElement('script');
@@ -13,6 +15,13 @@ const loadJS = (url) => {
 };
 
 loadJS('./scripts.js')
+
+const h1 = document.createElement('h1');
+h1.textContent = `Etch A Sketch`
+container.appendChild(h1);
+
+
+// Div container and square divs
 
 const squares = document.createElement('div');
 squares.classList.add('squares');
@@ -24,7 +33,6 @@ const singleDiv = () => {
     let item = document.createElement('div');
     item.classList.add('item');
     item.addEventListener('mouseover', () => {
-        // e.target.setAttribute('style', 'backgroundColor: blue')
         item.style.backgroundColor = 'white'
     });
     squares.appendChild(item);
@@ -39,3 +47,11 @@ const divMultiplier = (num) => {
 }
 
 divMultiplier(256);
+
+// Creates Reset Button
+
+const button = document.createElement('button');
+button.classList.add('btn');
+button.textContent = `Reset`
+container.appendChild(button);
+
