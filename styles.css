@@ -1,0 +1,45 @@
+html {
+    box-sizing: border-box;
+    font-size: 17px;
+}
+
+@media (max-width: 900px) {
+    html {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 400px) {
+    html {
+        font-size: 13px;
+    }
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-flow: column wrap;
+    place-content: center center;
+}
+
+.squares {
+    display: grid;
+    grid-template-columns: repeat(16, minmax(1rem, auto));
+    grid-template-rows: repeat(16, minmax(1rem, auto));
+    flex: 1 1 auto;
+    max-height: 100%;
+    max-width: 100%;
+    border: solid 1px black;
+}
+
+.item {
+    border: solid white 1px;
+    background-color: blueviolet;
+}
