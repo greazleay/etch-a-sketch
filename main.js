@@ -69,9 +69,9 @@ controls.appendChild(button);
 
 // Div container and square divs
 
-const squares = document.createElement('div');
-squares.classList.add('squares');
-container.appendChild(squares);
+const grid = document.createElement('div');
+grid.classList.add('grid');
+container.appendChild(grid);
 
 
 
@@ -80,10 +80,10 @@ container.appendChild(squares);
 function divBlock() {
     let item = document.createElement('div');
     item.classList.add('item');
-    item.addEventListener('mouseover', () => {
-        item.setAttribute('class', 'item_mod');
-    });
-    squares.appendChild(item);
+    // item.addEventListener('mouseover', () => {
+    //     item.setAttribute('class', 'item_mod');
+    // });
+    grid.appendChild(item);
 };
 
 // Function below renders the div multiple times
@@ -95,7 +95,7 @@ function addDiv(num) {
 }
 
 function removeDiv() {
-    squares.removeChild(squares.firstChild);   
+    grid.removeChild(grid.firstChild);   
 }
 
 function remover(num) {
@@ -109,6 +109,6 @@ let min = slider.valueAsNumber  - parseInt(slider.min) + 1;
 let max = parseInt(slider.max) - slider.valueAsNumber;
 
 // addDiv(Math.pow(min, 2));
-addDiv(400)
+addDiv(100)
 
 
