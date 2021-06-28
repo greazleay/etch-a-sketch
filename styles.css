@@ -1,3 +1,7 @@
+:root {
+    --grid-item:
+}
+
 html {
     box-sizing: border-box;
     font-size: 17px;
@@ -73,8 +77,8 @@ input[type='color'] {
     height: 32.3rem;
     font-size: 1rem;
     display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: repeat(10, 1fr);
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr);
 }
 
 .item {
@@ -83,6 +87,5 @@ input[type='color'] {
 }
 
 .item_mod {
-    border: solid white 1px;
     background-color: blueviolet;
 }

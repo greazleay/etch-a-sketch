@@ -1,9 +1,9 @@
 // Function controlling button reset
 
-const colorReset = () => {
-    const divBlocks = document.querySelectorAll('.item_mod');
-    divBlocks.forEach(div => {
-        div.setAttribute('class', 'item');
+function colorReset() {
+    const gridItems = document.querySelectorAll('.item_mod');
+    gridItems.forEach(e => {
+        e.setAttribute('class', 'item');
     });
 };
 
@@ -19,3 +19,13 @@ const adjustDivs = () => {
 };
 
 slider.addEventListener('input', adjustDivs);
+
+function randomColor() {
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+
+    color.addEventListener('click', (e) => {
+        // e.target.value = `rgb(${r}, ${g}, ${b})`
+    })
+}

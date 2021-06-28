@@ -36,9 +36,9 @@ controls.appendChild(label);
 const slider = document.createElement('input');
 slider.setAttribute('type', 'range');
 slider.setAttribute('name', 'slider');
-slider.setAttribute('min', '1');
+slider.setAttribute('min', '0');
 slider.setAttribute('max', '100');
-slider.setAttribute('step', '1');
+slider.setAttribute('step', '2');
 slider.setAttribute('value', '16');
 controls.appendChild(slider);
 
@@ -77,12 +77,12 @@ container.appendChild(grid);
 
 // Function below creates a single div element
 
-function divBlock() {
+function gridItem() {
     let item = document.createElement('div');
     item.classList.add('item');
-    // item.addEventListener('mouseover', () => {
-    //     item.setAttribute('class', 'item_mod');
-    // });
+    item.addEventListener('mouseover', () => {
+        item.setAttribute('class', 'item item_mod');
+    });
     grid.appendChild(item);
 };
 
@@ -90,7 +90,7 @@ function divBlock() {
 
 function addDiv(num) {
     for (let i = 0; i < num; i++) {
-        divBlock();
+        gridItem();
     }
 }
 
@@ -109,6 +109,6 @@ let min = slider.valueAsNumber  - parseInt(slider.min) + 1;
 let max = parseInt(slider.max) - slider.valueAsNumber;
 
 // addDiv(Math.pow(min, 2));
-addDiv(100)
+addDiv(256)
 
 
