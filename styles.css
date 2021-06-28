@@ -19,8 +19,15 @@ html {
     box-sizing: inherit;
 }
 
+@font-face {
+    font-family: 'Akaya';
+    src: url('./fonts/AkayaKanadaka-Regular.ttf');
+}
+
 body {
     text-align: center;
+    font-family: 'Akaya';
+    background-color:lightskyblue;
 }
 
 .container {
@@ -29,16 +36,37 @@ body {
     place-content: center center;
 }
 
+.controls {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+.controls input, button {
+    margin: 0 6px;
+}
+
 .squares {
-    display: grid;
-    grid-template-columns: repeat(16, minmax(1rem, auto));
-    grid-template-rows: repeat(16, minmax(1rem, auto));
-    flex: 1 1 auto;
-    margin: 1rem 0;
-    border: solid 1px black;
+    display: flex;
+    flex-flow: row wrap;
+    margin: 3rem 0;
+    border: solid 2px black;
+    border-radius: 2px;
+    width: 32rem;
+    height: 32rem;
+    font-size: 1rem;
 }
 
 .item {
     border: solid white 1px;
+    background-color: yellow;
+    flex: 1 1 2em;
+    max-width: 100%;
+}
+
+.item_mod {
+    border: solid white 1px;
     background-color: blueviolet;
+    flex: 1 1 2em;
+    max-width: 100%;
 }
