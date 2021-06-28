@@ -46,11 +46,28 @@ body {
     margin: 0 6px;
 }
 
+button {
+    border: none;
+    font-family: inherit;
+    border-radius: 9999px;
+    background-color: dodgerblue;
+    color: white;
+    width: 4rem;
+}
+
+button:hover {
+    background-color: teal;
+}
+
+input[type='color'] {
+    border: none;
+}
+
 .squares {
     display: flex;
     flex-flow: row wrap;
     margin: 3rem 0;
-    border: solid 2px black;
+    border: double 2px rgb(185, 145, 145);
     border-radius: 2px;
     width: 32rem;
     height: 32rem;
@@ -61,12 +78,12 @@ body {
     border: solid white 1px;
     background-color: yellow;
     flex: 1 1 2em;
-    max-width: 100%;
+    
 }
 
 .item_mod {
     border: solid white 1px;
     background-color: blueviolet;
     flex: 1 1 2em;
-    max-width: 100%;
+    /* max-width: 100%; */
 }

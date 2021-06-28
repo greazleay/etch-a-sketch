@@ -30,7 +30,7 @@ container.appendChild(controls);
 
 const label = document.createElement('label');
 label.setAttribute('for', 'slider');
-label.textContent = `Slide below to change grid size`;
+label.textContent = `Grid size`;
 controls.appendChild(label);
 
 const slider = document.createElement('input');
@@ -109,6 +109,6 @@ let min = slider.valueAsNumber  - parseInt(slider.min) + 1;
 let max = parseInt(slider.max) - slider.valueAsNumber;
 
 // addDiv(Math.pow(min, 2));
-addDiv(1000)
+addDiv(400)
 
 
