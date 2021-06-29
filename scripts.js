@@ -1,17 +1,18 @@
 // Function controlling button reset
 
 function colorReset() {
-    const gridItems = document.querySelectorAll('.item_mod');
+    const gridItems = document.querySelectorAll('.item');
     gridItems.forEach(e => {
-        e.setAttribute('class', 'item');
+        e.setAttribute('style', `background-color: rgb(0, 60, 255)`);
     });
+    color.defaultValue = "";
 };
 
 button.addEventListener('click', colorReset)
 
 // Function controlling the slider
 
-const adjustDivs = () => { 
+function adjustDivs() { 
     output.textContent = slider.value;
     grid.style.gridTemplateColumns = `repeat(${slider.value}, 1fr)`;
     grid.style.gridTemplateRows = `repeat(${slider.value}, 1fr)`;
@@ -33,13 +34,19 @@ const adjustDivs = () => {
 
 slider.addEventListener('input', adjustDivs);
 
-function randomColor() {
-    const r = Math.floor(Math.random() * 256);
-    const g = Math.floor(Math.random() * 256);
-    const b = Math.floor(Math.random() * 256);
+// Color Picker
 
-    color.addEventListener('click', (e) => {
-        // e.target.value = `rgb(${r}, ${g}, ${b})`
-    })
+color.addEventListener('change', () => { color.defaultValue = "#000000" })
+
+// Generating Random Colors
+
+function randomColor() {
+    let r = Math.floor(Math.random() * 256);
+    let g = Math.floor(Math.random() * 256);
+    let b = Math.floor(Math.random() * 256);
+
+    return `rgb(${r}, ${g}, ${b})`
 }
+
+random.addEventListener('click', () => { color.defaultValue = "1"})
 

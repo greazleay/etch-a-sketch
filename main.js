@@ -46,11 +46,18 @@ output.setAttribute('for', 'slider');
 output.textContent = slider.value;
 controls.appendChild(output);
 
+// Random Color Button
+
+const random = document.createElement('button');
+random.classList.add('btn');
+random.textContent = `RGB`
+controls.appendChild(random);
+
 // Color Picker control
 
 const colorLabel = document.createElement('label');
 colorLabel.setAttribute('for', 'color');
-colorLabel.textContent = `Pick a color:`;
+colorLabel.textContent = `Change color:`;
 controls.appendChild(colorLabel);
 
 const color = document.createElement('input');
@@ -65,21 +72,29 @@ button.classList.add('btn');
 button.textContent = `Reset`
 controls.appendChild(button);
 
-// Div container and square divs
+// Grid Container
 
 const grid = document.createElement('div');
 grid.classList.add('grid');
 container.appendChild(grid);
 
-
-
 // Logic for adding and removing grid items
 
-function gridItem() { 
+function addGridItem() { 
     let item = document.createElement('div');
     item.classList.add('item');
     item.addEventListener('mouseover', () => {
-        item.setAttribute('class', 'item item_mod');
+        switch (color.defaultValue) {
+            case "":
+                item.setAttribute('style', `background-color: blueviolet`);
+                break;
+            case "1":
+                item.setAttribute('style', `background-color: ${randomColor()}`);
+                break;
+            default:
+                item.setAttribute('style', `background-color: ${color.value}`)
+                break;
+        }
     });
     grid.appendChild(item);
 };
@@ -94,11 +109,9 @@ function removeGridItem() {
 
 function gridItemAdder(num) {
     for (let i = 0; i < num; i++) {
-        gridItem();
+        addGridItem();
     }
 }
-
-
 
 function gridItemRemover(num) {
     for (let i = 0; i < num; i++) {
