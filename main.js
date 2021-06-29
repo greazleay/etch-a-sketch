@@ -4,11 +4,9 @@ const container = document.createElement('div');
 container.classList.add('container');
 body.appendChild(container);
 
-
-
 // Function to load scripts
 
-const loadJS = (url) => {
+function loadJS(url) {
     let script = document.createElement('script');
     script.src = url;
     body.appendChild(script)
@@ -38,7 +36,7 @@ slider.setAttribute('type', 'range');
 slider.setAttribute('name', 'slider');
 slider.setAttribute('min', '0');
 slider.setAttribute('max', '100');
-slider.setAttribute('step', '2');
+slider.setAttribute('step', '1');
 slider.setAttribute('value', '16');
 controls.appendChild(slider);
 
@@ -75,9 +73,9 @@ container.appendChild(grid);
 
 
 
-// Function below creates a single div element
+// Logic for adding and removing grid items
 
-function gridItem() {
+function gridItem() { 
     let item = document.createElement('div');
     item.classList.add('item');
     item.addEventListener('mouseover', () => {
@@ -86,29 +84,26 @@ function gridItem() {
     grid.appendChild(item);
 };
 
-// Function below renders the div multiple times
+function removeGridItem(num) {
+    for (let i = 0; i < num; i++) {
+        gridItemRemover()
+    }
+}
 
-function addDiv(num) {
+// Loops for manipulating grid items multiple times
+
+function addGridItem(num) {
     for (let i = 0; i < num; i++) {
         gridItem();
     }
 }
 
-function removeDiv() {
-    grid.removeChild(grid.firstChild);   
+function gridItemRemover() {
+    let item = document.querySelector('.item');
+    let grid = document.querySelector('.grid');
+    grid.removeChild(item)
 }
 
-function remover(num) {
-    for (let i = 0; i < num; i++) {
-        removeDiv();
-    }
-}
-
-// let count = Math.pow(slider.valueAsNumber, 2)
-let min = slider.valueAsNumber  - parseInt(slider.min) + 1;
-let max = parseInt(slider.max) - slider.valueAsNumber;
-
-// addDiv(Math.pow(min, 2));
-addDiv(256)
+addGridItem(256)
 
 
