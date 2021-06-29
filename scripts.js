@@ -22,10 +22,10 @@ const adjustDivs = () => {
     
     switch (true) {
         case grid.childElementCount < sliderSquare:
-            addDiv(add)
+            gridItemAdder(add)
             break;
         case grid.childElementCount > slider.valueAsNumber:
-            removeDiv(sub)
+            gridItemRemover(sub)
         default:
             break;
     }

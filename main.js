@@ -84,26 +84,28 @@ function gridItem() {
     grid.appendChild(item);
 };
 
-function removeGridItem(num) {
-    for (let i = 0; i < num; i++) {
-        gridItemRemover()
-    }
-}
-
-// Loops for manipulating grid items multiple times
-
-function addGridItem(num) {
-    for (let i = 0; i < num; i++) {
-        gridItem();
-    }
-}
-
-function gridItemRemover() {
+function removeGridItem() {
     let item = document.querySelector('.item');
     let grid = document.querySelector('.grid');
     grid.removeChild(item)
 }
 
-addGridItem(256)
+// Loops for manipulating grid items multiple times
+
+function gridItemAdder(num) {
+    for (let i = 0; i < num; i++) {
+        gridItem();
+    }
+}
+
+
+
+function gridItemRemover(num) {
+    for (let i = 0; i < num; i++) {
+        removeGridItem()
+    }
+}
+
+gridItemAdder(256)
 
 
