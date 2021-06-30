@@ -3,7 +3,7 @@
 function colorReset() {
     const gridItems = document.querySelectorAll('.item');
     gridItems.forEach(e => {
-        e.setAttribute('style', `background-color: rgb(0, 60, 255)`);
+        e.setAttribute('style', `background-color: rgb(255, 255, 255)`);
     });
     color.defaultValue = "";
 };
